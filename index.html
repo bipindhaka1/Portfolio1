@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio Website - Bipin</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <img src="Logo.png" class="logo" alt="Logo">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="work.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const links = document.querySelectorAll('nav ul li a[href^="#"]');
+                        links.forEach(link => {
+                            link.addEventListener('click', function(event) {
+                                event.preventDefault();
+                                const targetId = this.getAttribute('href').substring(1);
+                                const targetElement = document.getElementById(targetId);
+                                window.scrollTo({
+                                    top: targetElement.offsetTop,
+                                    behavior: 'smooth'
+                                });
+                            });
+                        });
+                    });
+                </script>
+            </nav>
+            <div class="header-text">
+                <p>Aerospace Engineer/Software Developer</p>
+                <p>Hey, I'm Bipin Dhakal!</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="home" class="section">
+        <h2>Home Section</h2>
+        <p>Welcome to my personal portfolio website!</p>
+    </div>
+    <div id="about" class="section">
+        <h2>About Me</h2>
+        <p>Information about Bipin Dhakal.</p>
+    </div>
+    <div id="services" class="section">
+        <h2>Services</h2>
+        <p>Details about services offered.</p>
+    </div>
+    <div id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <p>Examples of my work.</p>
+    </div>
+</body>
+</html>
